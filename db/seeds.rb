@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+states = State.create([{ :name => "NSW", :name => "QLD"}])
+
+regions = {}
+regions[:newcastle] = Region.create(:name => "Newcastle", :state => states.first)
+
+schools = {}
+schools[:merewether] = School.create(:name => "Merewether High School", :region => regions[:newcastle])
+
+classrooms = {}
+classrooms[:a] = Classroom.create(:name => "Class A", :school => schools[:merewether])
